@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+
+  web:
+    image: elalitte/nginx-amplify:0.1
+    ports:
+      - "8082:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/problemSolver.conf
+      - ./www:/var/www
+    environment:
+      - API_KEY=143330211db9a34c7b0410c15968fdd9
+      - AMPLIFY_IMAGENAME=mon-service1
+    networks:
+      - localnet
+    depends_on:
+      - php
+
+  php:
+    image: elalitte/php7-fpm-mongodb
+    volumes:
+      - ./www:/var/www
+    networks:
+      - localnet
+
+networks:
+  localnet:

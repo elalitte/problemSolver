@@ -1,0 +1,52 @@
+version: '3.7'
+
+services:
+
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - ./mongodb/db:/data/db
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: mdpitinet2
+    networks:
+      - localnet
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: mdpitinet2
+    networks:
+      - localnet
+
+  web:
+    image: elalitte/nginx-amplify:0.1
+    ports:
+      - "8082:80"
+    volumes:
+      - ./nginx-amplify/nginx.conf:/etc/nginx/conf.d/problemSolver.conf
+      - ./nginx-amplify/www:/var/www
+    environment:
+      - API_KEY=143330211db9a34c7b0410c15968fdd9
+      - AMPLIFY_IMAGENAME=mon-service1
+    networks:
+      - localnet
+    depends_on:
+      - php
+
+  php:
+    image: elalitte/php7-fpm-mongodb
+    volumes:
+      - ./nginx-amplify/www:/var/www
+    networks:
+      - localnet
+
+networks:
+  localnet:

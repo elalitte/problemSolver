@@ -1,0 +1,4 @@
+{
+	{ "description": "La salle manque de luminosité", "details": "La salle manque de luminosité et il faudrait trouver une solutions simple et à coùt réduit pour l'améliorer", "reality": 10, "urgency": 7, "leader": "EL", "team": "MF, MD, CL", "dueDate": "15/03/2020"},  
+	{ "description": "Absences des étudiants", "details": "Les élèves sont souvent absents et nous n'avons pas trouvé de solution miracle pour empêcher cela", "reality": 10, "urgency": 7, "leader": "GH", "team": "GF, KL, ER", "dueDate": "16/06/2020"}
+}
