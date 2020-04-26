@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Problem solver</title>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://kit.fontawesome.com/94dca36377.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="app" class="container">

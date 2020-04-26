@@ -21,7 +21,7 @@ $conn = $db->getConnection();
 $data = json_decode(file_get_contents("php://input", true));
 
 // insert record
-$insert = new MongoDBDriverBulkWrite();
+$insert = new MongoDB\Driver\BulkWrite();
 $insert->insert($data);
 
 $result = $conn->executeBulkWrite("$dbname.$collection", $insert);

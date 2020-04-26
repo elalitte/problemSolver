@@ -28,6 +28,7 @@ services:
 
   web:
     image: elalitte/nginx-amplify:0.1
+    restart: always
     ports:
       - "8082:80"
     volumes:
@@ -43,6 +44,7 @@ services:
 
   php:
     image: elalitte/php7-fpm-mongodb
+    restart: always
     volumes:
       - ./nginx-amplify/www:/var/www
     networks:

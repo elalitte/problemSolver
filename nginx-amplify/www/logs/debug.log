@@ -1,0 +1,229 @@
+Writing Log
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [date] => 09-04-2018
+            [length] => 10
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [date] => 09-04-2018
+            [length] => 20
+        )
+
+    [2] => Array
+        (
+            [id] => 1
+            [date] => 10-04-2018
+            [length] => 11
+        )
+
+)
+
+Writing Log
+4
+Writing Log
+4
+Writing Log
+4
+Writing Log
+4
+Writing Log
+4
+Writing Log
+4
+Writing Log
+4
+Writing Log
+4
+Writing Log
+4
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+4
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+4
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+4
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+4
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+4
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+4
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+4
+Writing Log
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+4
+Writing Log
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+
+Writing Log
+
+
+Writing Log
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+
+Writing Log
+
+
+Writing Log
+
+
+Writing Log
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+
+Writing Log
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+
+Writing Log
+stdClass Object
+(
+    [description] => 4
+)
+
+4
+Writing Log
+stdClass Object
+(
+    [test] => 5
+)
+
+
+Writing Log
+stdClass Object
+(
+    [test] => 5
+)
+
+

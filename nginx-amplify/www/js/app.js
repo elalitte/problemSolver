@@ -3,18 +3,47 @@ let problemstab = {
 		return {
 			listeProblems: null,
 			addProblemOn: false,
-			addButton: "Ajouter un problème"
+			addButton: "Ajouter un problème",
+			intitule: "",
+			detail: "",
+			leProbleme: ""
 		}
 	},
 	methods: {
-		addProblemClicked() {
-			if (this.addProblemOn) {
-				this.addProblemOn = false
-				this.addButton = "Ajouter un problème"
+		addProblemClicked(e) {
+			var self=this
+			if (self.addProblemOn) {
+				self.addProblemOn = false
+				self.addButton = "Ajouter un problème"
+				e.preventDefault();
+				if ( self.intitule == "" || self.detail == "" ) {
+				}
+				else {
+				axios.post('/create.php', { "description": self.intitule, "details": self.detail, "reality": 0, "urgency": 0, "leader": "", "team": "", "dueDate": "" })
+				.then(response => (self.output = response.data))
+				.catch(function (error) {
+					self.output = error;
+				});
+				// On met à jour la variable listeProblems en allant réinterroger la base
+				// pour mettre à jour la page avec les nouvelles infos 
+				axios.get('/read.php').then(response => (self.listeProblems = response.data))
+				self.intitule = ""
+				self.detail = ""
+				}
 			} else {
-				this.addProblemOn = true
-				this.addButton = "Valider votre problème"
+				self.addProblemOn = true
+				self.addButton = "Valider votre problème"
 			}
+		},
+		deleteProblem(problem) {
+			self=this
+			this.leProbleme=problem
+			axios.post('/delete.php', {test: "5"})
+			.then(response => {})
+			.catch(e => {
+			  this.errors.push(e)
+			})
+			axios.get('/read.php').then(response => (self.listeProblems = response.data))
 		}
 	},
 	mounted () {
@@ -33,6 +62,7 @@ let problemstab = {
 			  <th scope="col">Leader</th>
 			  <th scope="col">Team</th>
 			  <th scope="col">Délai</th>
+			  <th scope="col"></th>
 			</tr>
 			</thead>
 			<tbody>
@@ -44,15 +74,17 @@ let problemstab = {
 			  <td>{{ problem.leader }}</td>
 			  <td>{{ problem.team }}</td>
 			  <td>{{ problem.dueDate }}</td>
+			  <td class="trash" @click="deleteProblem(problem)"><i class="fas fa-trash-alt"></i></td>
 			</tr>
 			<tr v-show="addProblemOn">
-			  <th scope="row"><input type="text" placeholder="Entrez l'intitulé"></th>
-			  <td><input type="text" placeholder="Entrez les détails"></td>
+			  <th scope="row"><input type="text" v-model="intitule" placeholder="Entrez l'intitulé"></th>
+			  <td><input type="text" v-model="detail" placeholder="Entrez les détails"></td>
 			  <td align="center">XXX</td>
 			  <td align="center">XXX</td>
 			  <td align="center">XXX</td>
 			  <td align="center">XXX</td>
 			  <td align="center">XXX</td>
+			  <td class="trash" align="center">X</td>
 			</tr>
 			</tbody>
 		  </table>
